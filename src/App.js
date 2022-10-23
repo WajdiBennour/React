@@ -1,4 +1,4 @@
-import './App.css';
+import './Index.css';
 import Employee from './Components/Employee';
 import {useState} from 'react';
 
@@ -8,7 +8,7 @@ function App() {
   const show = true;
   
   return (
-    <div className="App">
+    <div className="App bg-red-500">
       {  show ?
         <>
           <input type="text" onChange=
