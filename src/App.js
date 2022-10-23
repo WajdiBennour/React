@@ -1,20 +1,20 @@
 import './App.css';
+import Employee from './Components/Employee';
 
 function App() {
+  console.log('We will show employees');
+  const show = false;
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <Employee />
+          <Employee />
+          <Employee />
+          <Employee />
+          <Employee />
+          <Employee />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
