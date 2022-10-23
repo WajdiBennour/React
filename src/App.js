@@ -9,7 +9,7 @@ function App() {
   
   return (
     <div className="App">
-      {  show ? (
+      {  show ?
         <>
           <input type="text" onChange=
           {
@@ -24,7 +24,6 @@ function App() {
           <br></br>
           <Employee name = 'Kevin'/>
         </>
-        )
         :
         <p>You cannot see this</p>
       }
