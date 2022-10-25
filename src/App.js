@@ -39,6 +39,11 @@ function App() {
       },
     ]
   )
+function UpdateEmployee(id, newName, newRole){
+  console.log("update function");
+  console.log(id, newName, newRole);
+}
+
   const show = true;
   
   return (
@@ -56,6 +61,7 @@ function App() {
                           name={employee.name} 
                           role={employee.role} 
                           src={employee.img}
+                          updateEmployee={UpdateEmployee}
                         />
                       )
                     })}
