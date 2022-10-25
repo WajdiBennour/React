@@ -5,6 +5,40 @@ import {useState} from 'react';
 function App() {
   
   const[role, setRole] = useState('Unity Developper');
+  const[Employees, setEmployees] = useState(
+    [
+      {
+        id: 1,
+        name: 'John',
+        role: 'CEO',
+        img: 'https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      },
+      {
+        id: 2,
+        name: 'Wajdi',
+        role: 'Unity Developper',
+        img: 'https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      },
+      {
+        id: 3,
+        name: 'Anna',
+        role: 'Manager',
+        img: 'https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      },
+      {
+        id: 4,
+        name: 'Kevin',
+        role: 'HR Manager',
+        img: 'https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      },
+      {
+        id: 5,
+        name: 'Marie',
+        role: 'HR Manager',
+        img: 'https://images.pexels.com/photos/270366/pexels-photo-270366.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      },
+    ]
+  )
   const show = true;
   
   return (
@@ -13,18 +47,19 @@ function App() {
         <>
           <input type="text" onChange=
           {
-            (e)=>
-            {
-              setRole(e.target.value);
-            }
+            (e) => { setRole(e.target.value); }
           }/>
-        <div class='flex flex-wrap'>
-          <Employee name= 'John' role='CEO' src='https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'/>
-          <br></br>
-          <Employee name= 'Wajdi' role={role} class='decoration-red-300'/>
-          <br></br>
-          <Employee name = 'Kevin'/>
-        </div>
+          <div className='flex flex-wrap justify-center'>
+            {Employees.map( (employee) => {
+              return ( <Employee 
+                          id={employee.id}
+                          name={employee.name} 
+                          role={employee.role} 
+                          src={employee.img}
+                        />
+                      )
+                    })}
+          </div>
         </>
         :
         <p>You cannot see this</p>
